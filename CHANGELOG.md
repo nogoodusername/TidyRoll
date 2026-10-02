@@ -5,6 +5,12 @@ All notable changes to this project are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project follows [Semantic Versioning](https://semver.org/).
 
+## [0.1.1] - 2026-10-02
+
+### Changed
+
+- New app icon: a fanned stack of photo cards on a coral-to-purple gradient.
+
 ## [0.1.0] - 2026-10-02
 
 ### Added
@@ -30,5 +36,5 @@ and this project follows [Semantic Versioning](https://semver.org/).
   footer link.
 - CI workflow (build check on push/PR) and Release workflow (builds,
   packages, and publishes `TidyRoll.zip` to GitHub Releases on tag push).
-
+[0.1.1]: https://github.com/nogoodusername/TidyRoll/releases/tag/v0.1.1
 [0.1.0]: https://github.com/nogoodusername/TidyRoll/releases/tag/v0.1.0
