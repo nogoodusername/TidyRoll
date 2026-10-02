@@ -1,0 +1,39 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - "v*"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-release:
+    runs-on: macos-14
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build release binary
+        run: swift build -c release
+
+      - name: Assemble .app bundle
+        run: |
+          APP="build/TidyRoll.app"
+          mkdir -p "$APP/Contents/MacOS" "$APP/Contents/Resources"
+          cp .build/release/TidyRoll "$APP/Contents/MacOS/TidyRoll"
+          cp Resources/AppIcon.icns "$APP/Contents/Resources/AppIcon.icns"
+          cp Resources/Info.plist "$APP/Contents/Info.plist"
+          chmod +x "$APP/Contents/MacOS/TidyRoll"
+
+      - name: Zip app bundle
+        run: |
+          cd build
+          ditto -c -k --sequesterRsrc --keepParent TidyRoll.app TidyRoll.zip
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: build/TidyRoll.zip
+          generate_release_notes: true

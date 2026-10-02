@@ -6,6 +6,27 @@ so your library stays tidy without manual sorting.
 
 ![TidyRoll screenshot](docs/screenshot.png)
 
+## Download
+
+Pre-built app bundles are published on the [Releases page](https://github.com/nogoodusername/TidyRoll/releases) —
+no Xcode or Swift toolchain required.
+
+1. Download `TidyRoll.zip` from the [latest release](https://github.com/nogoodusername/TidyRoll/releases/latest).
+2. Unzip it and drag `TidyRoll.app` into `/Applications` (or run it in place).
+3. **First launch**: TidyRoll isn't notarized/signed by an Apple Developer ID,
+   so macOS Gatekeeper will block it with an "unidentified developer" warning.
+   Either:
+   - Right-click (or Control-click) `TidyRoll.app` → **Open** → confirm in the
+     dialog, or
+   - Run once from Terminal to clear the quarantine flag:
+     ```bash
+     xattr -cr /Applications/TidyRoll.app
+     ```
+4. Launch it normally from then on.
+
+A new build is published automatically every time a version tag is pushed —
+see [`.github/workflows/release.yml`](.github/workflows/release.yml).
+
 ## Features
 
 - **USB-only, no iCloud required** — talks to the iPhone directly over USB via
@@ -32,9 +53,10 @@ so your library stays tidy without manual sorting.
 - An iPhone connected via USB cable
 - Swift 5.9+ / Xcode command line tools (to build from source)
 
-## Building
+## Building from source
 
-TidyRoll is a Swift Package Manager project with a SwiftUI app target.
+Prefer to build it yourself instead of using a pre-built release? TidyRoll is
+a Swift Package Manager project with a SwiftUI app target.
 
 ```bash
 swift build
