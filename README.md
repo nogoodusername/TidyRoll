@@ -6,27 +6,6 @@ so your library stays tidy without manual sorting.
 
 ![TidyRoll screenshot](docs/screenshot.png)
 
-## Download
-
-Pre-built app bundles are published on the [Releases page](https://github.com/nogoodusername/TidyRoll/releases) —
-no Xcode or Swift toolchain required.
-
-1. Download `TidyRoll.zip` from the [latest release](https://github.com/nogoodusername/TidyRoll/releases/latest).
-2. Unzip it and drag `TidyRoll.app` into `/Applications` (or run it in place).
-3. **First launch**: TidyRoll isn't notarized/signed by an Apple Developer ID,
-   so macOS Gatekeeper will block it with an "unidentified developer" warning.
-   Either:
-   - Right-click (or Control-click) `TidyRoll.app` → **Open** → confirm in the
-     dialog, or
-   - Run once from Terminal to clear the quarantine flag:
-     ```bash
-     xattr -cr /Applications/TidyRoll.app
-     ```
-4. Launch it normally from then on.
-
-A new build is published automatically every time a version tag is pushed —
-see [`.github/workflows/release.yml`](.github/workflows/release.yml).
-
 ## Features
 
 - **USB-only, no iCloud required** — talks to the iPhone directly over USB via
@@ -46,6 +25,13 @@ see [`.github/workflows/release.yml`](.github/workflows/release.yml).
   with clear success/failure states and retry for anything that failed.
 - **Disconnect-safe** — detects when the iPhone is unplugged mid-operation and
   stops cleanly instead of hanging.
+
+## Download
+
+Grab the latest `.app` from the [Releases page](https://github.com/nogoodusername/TidyRoll/releases/latest) —
+no Xcode or Swift toolchain required. Unzip, move it to `/Applications`, and
+since it's unsigned, right-click → **Open** on first launch (or run
+`xattr -cr TidyRoll.app`) to get past Gatekeeper.
 
 ## Requirements
 
