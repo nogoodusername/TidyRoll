@@ -1,4 +1,7 @@
-# TidyRoll
+<h1>
+  <img src="Resources/AppIcon-1024.png" alt="TidyRoll icon" width="48" align="top">
+  TidyRoll
+</h1>
 
 A macOS menu utility that backs up photos and videos from a USB-connected
 iPhone to an external drive, automatically organized by date and location —
@@ -25,6 +28,8 @@ so your library stays tidy without manual sorting.
   with clear success/failure states and retry for anything that failed.
 - **Disconnect-safe** — detects when the iPhone is unplugged mid-operation and
   stops cleanly instead of hanging.
+
+<a href="https://www.producthunt.com/products/tidyroll?embed=true&amp;utm_source=badge-featured&amp;utm_medium=badge&amp;utm_campaign=badge-tidyroll" target="_blank" rel="noopener noreferrer"><img alt="TidyRoll - Back up your iPhone photos over USB, neatly organized. | Product Hunt" width="250" height="54" src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1267461&amp;theme=neutral&amp;t=1790932027351"></a>
 
 ## Download
 
