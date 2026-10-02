@@ -88,6 +88,10 @@ open build/TidyRoll.app
 
 MIT — see [LICENSE](LICENSE).
 
+## Changelog
+
+See [CHANGELOG.md](CHANGELOG.md) for release history.
+
 ## Author
 
 Made by [Kshitij Nagvekar](https://imhx.top).
