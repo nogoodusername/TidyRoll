@@ -4,6 +4,8 @@ A macOS menu utility that backs up photos and videos from a USB-connected
 iPhone to an external drive, automatically organized by date and location —
 so your library stays tidy without manual sorting.
 
+![TidyRoll screenshot](docs/screenshot.png)
+
 ## Features
 
 - **USB-only, no iCloud required** — talks to the iPhone directly over USB via

@@ -26,6 +26,8 @@ struct ContentView: View {
                 .padding(20)
             }
 
+            actionBar
+
             footerLinkBar
         }
         .frame(minWidth: 560, minHeight: 600)
@@ -269,8 +271,6 @@ struct ContentView: View {
                     }
                 }
             }
-
-            footer
         }
     }
 
@@ -291,28 +291,33 @@ struct ContentView: View {
         .padding(.vertical, 6)
     }
 
-    private var footer: some View {
-        HStack {
-            Spacer()
-            if !controller.deletableItems.isEmpty {
-                Button("Delete Backed-Up Photos (\(controller.deletableCount))") {
-                    controller.requestDeleteConfirmation()
+    private var actionBar: some View {
+        VStack(spacing: 0) {
+            Divider()
+            HStack {
+                Spacer()
+                if !controller.deletableItems.isEmpty {
+                    Button("Delete Backed-Up Photos (\(controller.deletableCount))") {
+                        controller.requestDeleteConfirmation()
+                    }
+                    .buttonStyle(.bordered)
+                    .disabled(isBusy)
                 }
-                .buttonStyle(.bordered)
-                .disabled(isBusy)
+                Button("Start Backup") {
+                    controller.startBackup()
+                }
+                .buttonStyle(.borderedProminent)
+                .keyboardShortcut(.defaultAction)
+                .disabled(
+                    controller.items.isEmpty
+                    || controller.destinationRoot == nil
+                    || isBusy
+                )
             }
-            Button("Start Backup") {
-                controller.startBackup()
-            }
-            .buttonStyle(.borderedProminent)
-            .keyboardShortcut(.defaultAction)
-            .disabled(
-                controller.items.isEmpty
-                || controller.destinationRoot == nil
-                || isBusy
-            )
+            .padding(.horizontal, 20)
+            .padding(.vertical, 12)
+            .background(.bar)
         }
-        .padding(.top, 4)
     }
 
     private var footerLinkBar: some View {
